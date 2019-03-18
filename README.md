@@ -43,8 +43,8 @@ sample payload:
 	"gender":"F",
 	"dob":"2014-04-03",
 	"bio":"http://angelina.com"
-    "actedIn":[],
-    "producedBy":[],
+        "actedIn":[],
+        "producedBy":[],
 }
 ```
 Response:It will give reponse id
@@ -59,8 +59,8 @@ sample payload
 	"title":"Matrix Reloaded",
 	"yearOfRelease":2008,
 	"plot":"Sci-Fiction",
-    "actors":[],
-    "producers":[],
+        "actors":[],
+        "producers":[],
     }
 ```
 Response: It will give resource_id 
@@ -71,8 +71,8 @@ Response: It will give resource_id
 	"title":"Matrix Reloaded",
 	"yearOfRelease":2008,
 	"plot":"Sci-Fiction",
-    "actors":[],
-    "producers":[],
+        "actors":[],
+        "producers":[],
     }
 ```
 5.DELETE: delete movie-->http://localhost:8282/api/movie/{movie_id}
