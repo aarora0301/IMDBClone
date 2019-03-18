@@ -47,12 +47,12 @@ sample payload:
         "producedBy":[],
 }
 ```
-Response:It will give reponse id
+Response:It will give reponse id</br>
 
 **Movie API**</br>
-1.GET: get movie information-->http://localhost:8282/api/movie/{movie_id}
-2.GET: get all movies-->http://localhost:8282/api/movie/
-3.POST: create movie-->http://localhost:8282/api/movie
+1.GET: get movie information-->http://localhost:8282/api/movie/{movie_id}</br>
+2.GET: get all movies-->http://localhost:8282/api/movie/</br>
+3.POST: create movie-->http://localhost:8282/api/movie</br>
 sample payload
 ```
 {
