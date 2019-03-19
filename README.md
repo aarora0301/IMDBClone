@@ -1,4 +1,5 @@
 # IMDBClone
+<<<<<<< Updated upstream
 Create IMDB clone using Node and Mongo</br>
 
 ## To run project:</br>
@@ -78,3 +79,8 @@ Response: It will give resource_id
 5.DELETE: delete movie-->http://localhost:8282/api/movie/{movie_id}
 
 
+=======
+Create IMDB clone using Node and neo4j
+
+Database Entities : Movie, Producer , Actor
+>>>>>>> Stashed changes
