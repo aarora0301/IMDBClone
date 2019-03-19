@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const Person=require('../person/model');
 
 const MovieSchema = new Schema({
     title: {type: String, unique: true, uppercase: true},
@@ -7,12 +8,12 @@ const MovieSchema = new Schema({
     plot: String,
     poster: String,
     actors: [{
-        type: String,
-        ref: 'Person'
+        type:Schema.Types.ObjectId,
+        ref: Person
     }],
     producers: [{
-        type: String,
-        ref: 'Person'
+        type: Schema.Types.ObjectId,
+        ref: Person
     }]
 });
 
