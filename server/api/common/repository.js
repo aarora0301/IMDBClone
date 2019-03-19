@@ -1,67 +1,74 @@
 const mongoose = require('mongoose');
 
 function getOneOrAll(modelName, queryData, sort, limit, findOne = false) {
-  const queryMethod = findOne ? 'findOne' : 'find';
-  const defaultResponse = findOne ? {} : [];
+    const queryMethod = findOne ? 'findOne' : 'find';
+    const defaultResponse = findOne ? {} : [];
 
-  queryData = queryData || {};
-  let query = mongoose.model(modelName)[queryMethod](queryData);
+    queryData = queryData || {};
+    let query = mongoose.model(modelName)[queryMethod](queryData);
 
-  query = sort ? query.sort(sort) : query;
-  query = limit ? query.limit(limit) : query;
+    query = sort ? query.sort(sort) : query;
+    query = limit ? query.limit(limit) : query;
 
-  return new Promise((resolve, reject) => {
-    query.exec((err, result) => {
-      if (err) {
-        return reject(err);
-      }
+    return new Promise((resolve, reject) => {
+        query.exec((err, result) => {
+            if (err) {
+                return reject(err);
+            }
 
-      resolve(result || defaultResponse);
+            resolve(result || defaultResponse);
+        });
     });
-  });
 }
 
 function save(existing, modelName, payload, newRecord) {
-  let objectToSave = existing;
+    let objectToSave = existing;
 
-  if (!existing && !newRecord) {
-    objectToSave = createModel(modelName, payload);
-  } else objectToSave = newRecord;
+    if (!existing && !newRecord) {
+        objectToSave = createModel(modelName, payload);
+    } else objectToSave = newRecord;
 
-  return new Promise((resolve, reject) => {
-    objectToSave.save((err, saved) => {
-      if (err) {
-        return reject(err);
-      }
+    return new Promise((resolve, reject) => {
+        objectToSave.save((err, saved) => {
+            if (err) {
+                return reject(err);
+            }
 
-      resolve(saved);
+            resolve(saved);
+        });
     });
-  });
 }
 
 function remove(modelName, queryData, removeOne = false) {
-  const queryMethod = removeOne ? 'deleteOne' : 'deleteMany';
-  queryData = queryData || {};
-  const query = mongoose.model(modelName)[queryMethod](queryData);
-  return query.exec();
+    const queryMethod = removeOne ? 'deleteOne' : 'deleteMany';
+    queryData = queryData || {};
+    const query = mongoose.model(modelName)[queryMethod](queryData);
+    return query.exec();
 }
 
 function createModel(modelName, payload) {
-  const Model = mongoose.model(modelName);
-  return new Model(payload);
+    const Model = mongoose.model(modelName);
+    return new Model(payload);
 }
 
 function update(modelName, queryData, payload, updateOne = true) {
-  const queryMethod = updateOne ? 'updateOne' : 'updateMany';
-  queryData = queryData || {};
-  const query = mongoose.model(modelName)[queryMethod](queryData, payload);
-  return query.exec();
+    const queryMethod = updateOne ? 'updateOne' : 'updateMany';
+    queryData = queryData || {};
+    const query = mongoose.model(modelName)[queryMethod](queryData, payload);
+    return query.exec();
+}
+
+function remove(modelName, queryData, deleteOne = true) {
+    const queryMethod = deleteOne ? 'deleteOne' : 'deleteMany';
+    queryData = queryData || {};
+    const query = mongoose.model(modelName)[queryMethod](queryData);
+    return query.exec();
 }
 
 module.exports = {
-  getOneOrAll,
-  save,
-  remove,
-  createModel,
-  update
+    getOneOrAll,
+    save,
+    remove,
+    createModel,
+    update
 };
