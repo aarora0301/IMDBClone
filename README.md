@@ -4,7 +4,7 @@ Create IMDB clone using Node and Mongo</br>
 
 ## To run project:</br>
 1.Clone Repo</br>
-2.Browse to IMDB clone folder and run 
+2.Browse to IMDB clone folder and run </br>
    a.'npm install'</br>
    b.'npm start'</br>
 3.Browse to IMDBClone/client and run npm start</br>
