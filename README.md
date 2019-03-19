@@ -9,7 +9,7 @@ Create IMDB clone using Node and Mongo</br>
    b.'npm start'</br>
 3.Browse to IMDBClone/client and run npm start</br>
 
-##Backend
+## Backend
 
 ### Endpoints created:
 
@@ -82,7 +82,7 @@ Response: It will give resource_id
 ```
 5.DELETE: delete movie-->http://localhost:8282/api/movie/{movie_id}
 
-##Frontend
+## Frontend
 
 **Technoogy**:React</br>
 
