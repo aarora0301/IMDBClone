@@ -1,0 +1,38 @@
+.MovieInfo {
+  width: 80%;
+  margin: 20px auto;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 3px #ccc;
+  text-align: center;
+}
+
+.Delete {
+
+}
+
+.Delete label {
+  display: block;
+  color: grey;
+}
+
+.Button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  color: #fa923f;
+}
+
+.Button :hover,
+.Button :active {
+  color: #521751;
+}
+
+.Delete button.Delete {
+  color: red;
+}
+
+.Delete button.Delete.hover,
+.Delete button.Delete:active {
+  color: darkred;
+}
