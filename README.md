@@ -1,5 +1,5 @@
 # IMDBClone
-<<<<<<< Updated upstream
+
 Create IMDB clone using Node and Mongo</br>
 
 ## To run project:</br>
@@ -8,6 +8,8 @@ Create IMDB clone using Node and Mongo</br>
    a.'npm install'</br>
    b.'npm start'</br>
 3.Browse to IMDBClone/client and run npm start</br>
+
+##Backend
 
 ### Endpoints created:
 
@@ -80,9 +82,11 @@ Response: It will give resource_id
 ```
 5.DELETE: delete movie-->http://localhost:8282/api/movie/{movie_id}
 
+##Frontend
 
-=======
-Create IMDB clone using Node and neo4j
+**Technoogy**:React</br>
 
-Database Entities : Movie, Producer , Actor
->>>>>>> Stashed changes
+Implementation </br>
+1.Home Screen (that shows all the movies in the database)</br>
+2.Movie Information Screen(Each Movie displayed on HomeScreen is clickable and redirects to a different screen where movie details can be viewed)</br>
+3.Movie can be deleted and redirection happens to home screen.</br>
